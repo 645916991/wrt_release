@@ -253,8 +253,9 @@ update_default_lan_addr() {
 }
 
 update_default_hostname() {
+    # 替换为您想要的主机名
     local CFG_PATH="$BUILD_DIR/package/base-files/files/bin/config_generate"
-    local custom_hostname="OpenWRT"  # 替换为您想要的主机名
+    local custom_hostname="OpenWRT"
 
     if [ -f "$CFG_PATH" ]; then
         sed -i "s/set system\.\@system\[-1\]\.hostname=.*/set system.\@system[-1].hostname='$custom_hostname'/" "$CFG_PATH"
